@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 html{
-  font-size: 16px;
+  font-size: 14px;
 }
   body {
      color: black;
@@ -73,7 +73,7 @@ html{
      background-image: url("../images/фон1.jpg");
      background-repeat: no-repeat;
      background-size: cover;
-     min-height: 80vh;
+     min-height: 50vh;
          /* min-height: 100vh;*/
    }
    .hero header {
@@ -102,8 +102,8 @@ html{
 
    }
    .container {
-     width: 1000px;
-     max-width: 100%;
+     width: 100%;
+     max-width: 1000px;
      margin: 0 auto;
    }
    .nav {
