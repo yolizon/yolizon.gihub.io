@@ -1,0 +1,10 @@
+:root{
+    --black: rgba(2,2,2,0.9);
+    --white: #efe;
+
+    --font-primary: 'Josefin Sans', sans-serif;
+    --root-font-size: 16px;
+
+
+    --font-size-default: calc(var(--root-font-size)/14*1rem);
+}

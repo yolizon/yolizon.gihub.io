@@ -9,15 +9,17 @@
   box-sizing: border-box;
 }
 html{
-  font-size: 14px;
+  font-size: var(--root-font-size);
 }
   body {
-     color: black;
-     font-family: 'Josefin Sans', sans-serif;
+     color: var(--black);
+     font-family: var(--font-primary);
+     background-color: var(--white);
      font-weight: 400;
-     font-size: 1rem;
+     font-size: calc(var(--font-size-default));
      line-height: 1.2;
      margin: 0;
+     overflow-x: hidden;
 
    }
 
@@ -73,7 +75,8 @@ html{
      background-image: url("../images/фон1.jpg");
      background-repeat: no-repeat;
      background-size: cover;
-     min-height: 50vh;
+     background-attachment: fixed;
+     min-height: 80vh;
          /* min-height: 100vh;*/
    }
    .hero header {
@@ -105,6 +108,40 @@ html{
      width: 100%;
      max-width: 1000px;
      margin: 0 auto;
+     padding: 0 15px;
+   }
+  .row {
+    width: 100%; ;
+  }
+   .col {
+     width: 100%;
+     padding: 0 15px;
+   }
+   .col-1 {
+     max-width: calc(100%/12);
+   }
+   .col-2 {
+    max-width: calc(2*100%/12);
+  }
+  .col-3 {
+    max-width: calc(3*100%/12);
+  }
+  .col-4 {
+    max-width: calc(4*100%/12);
+  }
+  .float-left {
+    float: left;
+
+  }
+   .float-right {
+     float: right;
+   }
+   .clearfix::after {
+     clear: both;
+     content: ' ';
+     display: block;
+     height: 0;
+     visibility: hidden;
    }
    .nav {
      background-color: ivory;
