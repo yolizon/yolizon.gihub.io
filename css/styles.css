@@ -1,6 +1,6 @@
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
 
 *,
@@ -174,4 +174,8 @@ html{
      margin-right: 1rem;
      white-space: nowrap;
      font-weight: 600;
+   }
+   .photo1 {
+     width: 30%;
+     height: 50%;
    }
