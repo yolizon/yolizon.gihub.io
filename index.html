@@ -26,7 +26,7 @@
                     <li><a href="blog.html"><i class="fab fa-blogger-b"></i>Blog</a></li>
                 </ul>
                 <ul class="navbar-tool">
-                     <li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
+                     <li><a href="#openmodal" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
                     <li><a href="#" title="Likes"><i class="far fa-heart"></i> </a></li>
                     <li><a href="#" title="Shopping cart"><i class="fas fa-cart-arrow-down"></i></a></li>
       
@@ -36,17 +36,47 @@
     <!-- ./navigation -->
     </header>
 
-    <!-- slaider-->
+    <!-- slider-->
 
-    <section class="hero">
-        <article class="container">
-             <header class="row">
+    <section class="hero pb-3 d-flex align-items-center">
+        <article class="container slider">
+            <div class="slides">
+                <div class="overflow">
+                    <div class="items">
+                        <article class="slide">
+                            <img src="images/фон1.jpg">
+                        </article>
+                        <article class="slide">
+                            <img src="images/фон2.jpg">
+                            <div class="row px-4 px-lg-6 ">
+                                <div class="col-lg-6 text-slide">
+                                    
+                                   <!-- <p class="text-uppercase">New inspiration 2020</p> -->
+                                    <h1 class="text-uppercase">New inspiration 2020</h1>
+                                    <a class="btn btn-browse">See more</a>
+                                    
+                                </div> 
+                            </div>
+                        </article>
+                        <article class="slide">
+                            <img src="images/фон3.jpg">
+                        </article>
+                        <article class="slide">
+                            <img src="images/фон4.jpg">
+                        </article>
+                        <article class="slide">
+                            <img src="images/фон5.jpg">
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <!--         <header class="row">
                  <div class="col">
                     <p class="text-uppercase">New inspiration 2020</p>
                     <h1 class="text-uppercase">20% off </h1>
                     <a class="btn btn-browse ">Browse colection</a>
-                </div>
-             </header>
+                </div> 
+             </header> -->
         </article>
     </section>
  <div class="container">   
@@ -57,6 +87,42 @@
         <h2> OUR CATEGORIES </h2>
         </header>
         <!-- carousel -->
+        <div class="row">
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <a href="#" class="category-item"><img src="images/фон1.jpg"><strong class="category-item-title">Flowers</strong></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#" class="category-item"><img src="images/фон1.jpg"><strong class="category-item-title">Decoration</strong></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#" class="category-item"><img src="images/фон1.jpg"><strong class="category-item-title">Wedding</strong></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#" class="category-item"><img src="images/фон1.jpg"><strong class="category-item-title">Masterclass</strong></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#" class="category-item"><img src="images/фон1.jpg"><strong class="category-item-title">Composition</strong></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#" class="category-item"><img src="images/фон1.jpg"><strong class="category-item-title">Landscaping</strong></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#" class="category-item"><img src="images/фон1.jpg"><strong class="category-item-title">Cafe & bar</strong></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#" class="category-item"><img src="images/фон1.jpg"><strong class="category-item-title">Friends</strong></a>
+                    </div>
+                    <!--<div class="carousel-item">
+                        <img src="images/фон1.jpg">
+                    </div>-->
+
+                </div>
+
+            </div>
+
+        </div>
     </section>
 
 <section class="py-5">
@@ -415,5 +481,80 @@
             </div>    
         </div>
     </footer>
+
+    <!--modal-->
+    <div class="modal" id="openmodal">
+        <div class="dialog">
+            <a href="#close" title="close login window" class="close">X</a>
+            <div class="col-left">
+                <div class="login-text">
+                    <h2>Welcome back</h2>
+                    <p>Create your account,<br>It's Totally free</p>
+                    <a href="#register" class="btn">Sign Up</a>
+                </div>
+            </div>
+            <div class="col-right">
+                <div class="login-form">
+                    <h2>Sign in</h2>
+                    <form>
+                        <p>
+                            <label>Username or email<span>*</span></label>
+                            <input type="text" placeholder='Username or email' required>
+                        </p>
+                        <p>
+                            <label>Password<span>*</span></label>
+                            <input type="password" placeholder='Password' required>
+                        </p>
+                        <p>
+                            <input type="submit" value="Sign in">
+                        </p>
+                        <p>
+                            <a href="#">Forget Password?</a>
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="modal" id="register">
+        <div class="dialog">
+            <a href="#cancel" title="close login window" class="close">X</a>
+            <div class="col-left">
+                <div class="login-text">
+                    <h2>Create Account</h2>
+                    <p>Have account?</p>
+                    <a href="#openmodal" class="btn">Sign in</a>
+                </div>
+            </div>
+            <div class="col-right">
+                <div class="login-form">
+                    <h2>Sign up</h2>
+                    <form>
+                        <p>
+                            <label for="">Username or email<span>*</span></label>
+                            <input type="text" placeholder='Username or email' required>
+                        </p>
+                        <p>
+                            <label for="">Password<span>*</span></label>
+                            <input type="password" placeholder='Password' required>
+                        </p>
+                        <p>
+                            <label for="">Confirm Password<span>*</span></label>
+                            <input type="password" placeholder='Confirm Password' required>
+                        </p>
+                        <p>
+                            <input type="submit" value="Sign up">
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 </body>
 </html>
