@@ -524,6 +524,7 @@ body {
     padding: 1em;
     border: solid 0.5px #6272dc;
     display: block;
+    margin-bottom: 1em;
   }
   .contact button {
     background-color:  #6272dc ;
@@ -617,8 +618,8 @@ body {
     left: 3rem;
   }
   .carousel {
-    background: white;
-    box-shadow: 0 10px 20px -5px black;
+    background: white; 
+    box-shadow: 0 10px 20px -1px black;
     height: 100px;
     margin: auto;
     overflow: hidden;
@@ -628,7 +629,7 @@ body {
   .carousel .carousel-track{
     display: flex;
     width: calc(250px*8);
-    animation: scroll 40s linear infinite;
+    animation: scroll 30s linear infinite;
 
   }
   .carousel .carousel-item{
@@ -643,7 +644,7 @@ body {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-250px*4));
+      transform: translateX(calc(-250px*3.4));
     }
   }
   .carousel::before, .carousel::after {
@@ -675,9 +676,9 @@ body {
     background: white;
     text-transform: uppercase;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-30%, -50%);
   }
   .modal {
      position: fixed;
@@ -687,7 +688,7 @@ body {
      bottom:0 ;
      background: rgba(0, 0, 0, 0);
      transition: all 5s ease-out;
-     transition-delay:0.2s ;
+     transition-delay: 0.2s ;
      display: block;
      z-index: 100;
      pointer-events: none;
