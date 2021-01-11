@@ -26,7 +26,7 @@
                     <li><a href="blog.html"><i class="fab fa-blogger-b"></i> Blog</a></li>
                 </ul>
                 <ul class="navbar-tool">
-                     <li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
+                     <li><a href="#openmodal" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
                     <li><a href="#" title="Likes"><i class="far fa-heart"></i> </a></li>
                     <li><a href="#" title="Shopping cart"><i class="fas fa-cart-arrow-down"></i></a></li>
       
@@ -358,5 +358,79 @@
             </div>    
         </div>
     </footer>
+        <!--modal-->
+        <div class="modal" id="openmodal">
+            <div class="dialog">
+                <a href="#close" title="close login window" class="close">X</a>
+                <div class="col-left">
+                    <div class="login-text">
+                        <h2>Welcome back</h2>
+                        <p>Create your account,<br>It's Totally free</p>
+                        <a href="#register" class="btn">Sign Up</a>
+                    </div>
+                </div>
+                <div class="col-right">
+                    <div class="login-form">
+                        <h2>Sign in</h2>
+                        <form>
+                            <p>
+                                <label>Username or email<span>*</span></label>
+                                <input type="text" placeholder='Username or email' required>
+                            </p>
+                            <p>
+                                <label>Password<span>*</span></label>
+                                <input type="password" placeholder='Password' required>
+                            </p>
+                            <p>
+                                <input type="submit" value="Sign in">
+                            </p>
+                            <p>
+                                <a href="#">Forget Password?</a>
+                            </p>
+    
+                        </form>
+                    </div>
+                </div>
+            </div>
+    
+    
+        </div>
+        <div class="modal" id="register">
+            <div class="dialog">
+                <a href="#cancel" title="close login window" class="close">X</a>
+                <div class="col-left">
+                    <div class="login-text">
+                        <h2>Create Account</h2>
+                        <p>Have account?</p>
+                        <a href="#openmodal" class="btn">Sign in</a>
+                    </div>
+                </div>
+                <div class="col-right">
+                    <div class="login-form">
+                        <h2>Sign up</h2>
+                        <form>
+                            <p>
+                                <label for="">Username or email<span>*</span></label>
+                                <input type="text" placeholder='Username or email' required>
+                            </p>
+                            <p>
+                                <label for="">Password<span>*</span></label>
+                                <input type="password" placeholder='Password' required>
+                            </p>
+                            <p>
+                                <label for="">Confirm Password<span>*</span></label>
+                                <input type="password" placeholder='Confirm Password' required>
+                            </p>
+                            <p>
+                                <input type="submit" value="Sign up">
+                            </p>
+    
+                        </form>
+                    </div>
+                </div>
+            </div>
+    
+    
+        </div>
 </body>
 </html>
