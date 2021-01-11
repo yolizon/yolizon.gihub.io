@@ -1,40 +1,17 @@
 // comment
 'use strict';
+// document.body.innerHTML ="<h1>Helloooo</h1>";
+// document.body.style.backgroundColor = "green";
+const shoppingCart=document.getElementById('shopping-cart');
+const aside=document.querySelector('.aside');
+const closeBtn=document.querySelector('.close-btn');
 
-/* let a = +(prompt('enter a:',''));
-let b = +(prompt('enter b:',''));
-if(isNaN(a) && isNaN(b)) {
-    alert('a or b not a number');
-}
-let o =prompt('enter operation','');
-if(o=='+') {
-    alert(a+b);
-}
-else if(o=='-'){
-    alert(a-b);
-}
-else if(o=='/'){
-    alert(a-b);
-}
-else if(o=='*'){
-    alert(a*b);
-}
-else if(o=='%'){
-    alert(a%b);
-}
-else {
-    alert('wrong operation');
-} */
-let key = 'value2';
-switch (key) {
-    case 'value1':
-        alert('Hello 1')
-        break;
-        case 'value2':
-            alert('Hello 2')
-            break;
+let toggleCart=function(){
+    aside.classList.toggle('show-sidebar');
+   
+};
+shoppingCart.addEventListener('click', toggleCart);
+closeBtn.addEventListener('click', function(){
+    aside.classList.remove('show-sidebar');
 
-    default:
-        alert('G B')
-        break;
-}
+});

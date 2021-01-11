@@ -9,33 +9,44 @@
 </head>
 
 <body>
-     <header  class="bg-white">
+    <header  class="bg-white">
     <!-- navigation -->
-        <nav id="nav">
-            <div class="navbar" id="navbar">
-                <input type="checkbox" id="hamburger">
-                <label for="hamburger"><i class="nav-toggle fas fa-bars"></i></label>
-                <div class="navbar-brand">
-                    <span class="text-dark text-uppercase font-weight-bold">Flowers Marquet</span>
-                </div>
-                <ul class="navbar-menu brackets">
-                    <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-                    <li><a href="catalog.html"><i class="fas fa-tags"></i>Shop</a></li>
-                    <li><a href="about.html"><i class="fas fa-info"></i>About</a></li>
-                    <li><a href="contact.html"><i class="fas fa-address-book"></i>Contact</a></li>
-                    <li><a href="blog.html"><i class="fab fa-blogger-b"></i>Blog</a></li>
-                </ul>
-                <ul class="navbar-tool">
-                    <li><a href="#openmodal" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
-                    <li><a href="#" title="Likes"><i class="far fa-heart"></i> </a></li>
-                    <li><a href="#" title="Shopping cart"><i class="fas fa-cart-arrow-down"></i></a></li>
-      
-                </ul>
+    <nav id="nav">
+        <div class="navbar" id="navbar">
+            <input type="checkbox" id="hamburger">
+            <label for="hamburger"><i class="nav-toggle fas fa-bars"></i></label>
+            <div class="navbar-brand">
+                <span class="text-dark text-uppercase font-weight-bold">Flowers Marquet</span>
             </div>
-        </nav> 
+            <ul class="navbar-menu brackets">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="catalog.html"><i class="fas fa-tags"></i>Shop</a></li>
+                <li><a href="about.html"><i class="fas fa-info"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-address-book"></i> Contact</a></li>
+                <li><a href="blog.html"><i class="fab fa-blogger-b"></i> Blog</a></li>
+            </ul>
+            <ul class="navbar-tool">
+                 <li><a href="#openmodal" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
+                <li><a href="#" title="Likes"><i class="far fa-heart"></i> </a></li>
+                <li><a href="#" id="shopping-cart" title="Shopping cart"><i class="fas fa-cart-arrow-down"></i></a></li>
+  
+            </ul>
+        </div>
+    </nav> 
     <!-- ./navigation -->
     </header>
+    <aside class="aside">
+        <div class="cart">
+            <div class="cart-header">
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+                <h2 class="logo"> Your shopping cart</h2>
+            </div>
+            <div class="cart-items">
 
+            </div>
+            <div class="cart-footer"></div>
+        </div>
+    </aside>
     <!-- slider-->
 
     <section class="hero pb-3 d-flex align-items-center">
@@ -51,7 +62,6 @@
                             <div class="row px-4 px-lg-6 ">
                                 <div class="col-lg-6 text-slide">
                                     
-                                   <!-- <p class="text-uppercase">New inspiration 2020</p> -->
                                     <h1 class="text-uppercase">New inspiration 2020</h1>
                                     <a class="btn btn-browse">See more</a>
                                     
@@ -70,13 +80,7 @@
                     </div>
                 </div>
             </div>
-            <!--         <header class="row">
-                 <div class="col">
-                    <p class="text-uppercase">New inspiration 2020</p>
-                    <h1 class="text-uppercase">20% off </h1>
-                    <a class="btn btn-browse ">Browse colection</a>
-                </div> 
-             </header> -->
+
         </article>
     </section>
  <div class="container">   
@@ -114,9 +118,6 @@
                     <div class="carousel-item">
                         <a href="#" class="category-item"><img src="images/фон1.jpg"><strong class="category-item-title">Friends</strong></a>
                     </div>
-                    <!--<div class="carousel-item">
-                        <img src="images/фон1.jpg">
-                    </div>-->
 
                 </div>
 
@@ -412,7 +413,6 @@
     </div>
         
 </section>
-  <!-- <div class="clearfix"></div> -->
  
   <!-- subscribe -->
     <section>  
