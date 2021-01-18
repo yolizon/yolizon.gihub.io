@@ -11,4 +11,5 @@
 
     --font-size-default: calc(var(--root-font-size)/16*1rem);
     --transition: all 0.3s linear;
+    --bezier: cubic-bezier(0.74, 0.06, 0.4, 0.92);
 }
