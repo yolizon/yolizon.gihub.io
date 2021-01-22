@@ -850,7 +850,7 @@ body > header{
     color: var(--primary-1);
     transition: var(--transition);
     cursor: pointer;
-    color: var(--red-dark);
+    color: darkolivegreen;
 }
   
 .close-btn:hover {

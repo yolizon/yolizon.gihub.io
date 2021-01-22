@@ -70,3 +70,17 @@ const categories =[
         image: "images/фон1.jpg",
     },
 ];
+const blocks =[
+    {
+        name: 'Free Shipping',
+        description: "Free shipping worldwide",
+    },
+    {
+        name: 'Free Shipping',
+        description: "Free shipping worldwide",
+    },
+    {
+        name: 'Free Shipping',
+        description: "Free shipping worldwide",
+    },
+];
