@@ -813,6 +813,7 @@ body > header{
     z-index: 10;
     transform: translateX(200%);
     transition: var(--transition);
+    overflow-y: scroll;
   }
   .show {
     transform: translate(0);
@@ -828,6 +829,10 @@ body > header{
     box-shadow: var(--light-shadow);
     transition: var(--transition);
     border: 1px #ccc double;
+    height: auto;
+    overflow-y: scroll;
+    padding-bottom: 4em;
+    
 }
 
 .cart-header, .cart-footer {
@@ -1110,4 +1115,19 @@ margin-right: 2rem;
   opacity: 0;
   animation: fadeBuy 1s var(--bezier) forwards;
   animation-delay: 1s;
+}
+.notempty {
+  color: #ff0084;
+  font-weight: 700;
+
+}
+.notempty::before {
+margin-right: 1px;
+content: '(';
+color: darkolivegreen;;
+}
+.notempty::after {
+  margin-left: 1px;
+  content: ')';
+  color: darkolivegreen;
 }

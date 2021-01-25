@@ -3,17 +3,18 @@ const sidebarToggle = document.querySelector(".sidebar-toggle");
 const closeBtn = document.querySelector(".close-btn");
 const clearCart = document.querySelector(".clear-cart");
 const single = document.querySelector(".single");
-const goBack = document.querySelector('.go-back');
+const cartTotal = document.querySelector(".cart-total");
 const cartItems = document.querySelector('.cart-items');
+const countItemsInCart = document.querySelector('.count-items-in-cart');
 
 const toggleCart = () => {
     single.classList.contains('show-single') && single.classList.remove('show-single');
     aside.classList.toggle("show");
     aside.classList.contains('show') &&  populateCart(cart);
+    setCartTotal(cart);
 }
 
 const closeCart = () => aside.classList.remove("show");
-
 
 const createProduct = data => 
 `
@@ -46,24 +47,61 @@ function makeShowcase(products) {
     document.querySelector('.showcase').innerHTML = result;
 }
 
+const creatDetail = (data) =>`
+<div class="detail product" data-id="${data.id}">
+    <div class="product_img">
+    <img src="${data.image}" alt="${data.name}">
+    </div>
+
+    <div class="product_description--content">
+        <div class="description_content--about">
+            <h1>${data.name}</h1>
+            <h2>$${data.price}</h2>
+            <div>${data.description}</div>
+        </div>
+    </div>    
+    <div class="go-back">
+        <i class="fas fa-play"></i>
+        <span>All product</span>
+    </div>
+    <div class="product_buttons">
+        <button class="btn wishlist">wishlist</button>
+        <button class="btn buy add-to-cart">add to cart</button>
+    </div>
+</div>
+`;
+
+const addItem = (product) => {
+    let exist = cart.some(elem => elem.id===product.id);
+    if(exist){
+        cart.forEach(elem => {
+            if(elem.id===product.id){
+                elem.amount +=1;
+                }
+        })
+    }else{
+        let cartItem = {...product, amount:1};
+        cart = [...cart, cartItem];
+    }
+    +countItemsInCart.textContent++;
+    if(+countItemsInCart.textContent>0){
+        countItemsInCart.classList.add('notempty');
+    } else {
+        countItemsInCart.classList.remove('notempty');
+    };
+}
+
 function renderShowcase(){
-    
-    // product-detail
     let productDetails = document.querySelectorAll('.product-detail');
-    
-    goBack.addEventListener('click', () => single.classList.remove("show-single"));
-    
     productDetails.forEach(function(element) {
         element.addEventListener("click", function(e){
             let product = getProduct(e.target.closest('.product').dataset.id);
-            let contentAbout = document.querySelector('.description__content--about');
-            contentAbout.innerHTML = `
-            <h1>${product.name}</h1>
-                <h2>$${product.price}</h2>
-                <div>${product.description}</div>
-            `;
-            document.querySelector('.product__img').innerHTML = `<img src="${product.image}" alt="">`;
+            single.innerHTML = creatDetail(product);
             single.classList.add("show-single");
+            const goBack = document.querySelector('.go-back');
+            goBack.addEventListener('click', () => single.classList.remove("show-single"));
+
+            document.querySelector('.detail .add-to-cart').addEventListener('click', (e)=> addItem(product));
         });
     });
     
@@ -143,36 +181,52 @@ function makeShipping(blocks) {
 const clear = () => {
     cart = [];
     cartItems.innerHTML = '';
+    setCartTotal(cart);
 }
 const filterItem = (cart, curentItem) => cart.filter(item => item.id !== +(curentItem.dataset.id));
     
 const findItem = (cart, curentItem) => cart.find(item => item.id === +(curentItem.dataset.id));
 
+function setCartTotal(cart) {
+    let tempTotal = 0;
+    cart.map(item => {
+        tempTotal = item.price*item.amount;
+        cartItems.querySelector(`#id${item.id} .product-subtotal`).textContent = parseFloat(tempTotal.toFixed(2));
+
+    });
+    cartTotal.textContent = parseFloat(cart.reduce((previous, curent) => previous + curent.price*curent.amount, 0).toFixed(2));
+    countItemsInCart.textContent = cart.reduce((previous, curent)  => previous + curent.amount, 0);
+}
+
 function renderCart() {
     clearCart.addEventListener("click", () => clear());
     cartItems.addEventListener("click", event => {
-        // event.preventDefault();
+    
         if (event.target.classList.contains("fa-trash-alt")){
             cart = filterItem(cart, event.target);
             event.target.closest('.cart-item').remove();
+            setCartTotal(cart);
         } else if (event.target.classList.contains("fa-caret-right")) {
             let tempItem = findItem(cart, event.target);
             tempItem.amount = tempItem.amount + 1;
             event.target.previousElementSibling.innerText = tempItem.amount;
+            setCartTotal(cart);
+            
         } else if (event.target.classList.contains("fa-caret-left")) {
             let tempItem = findItem(cart, event.target);
             if (tempItem !== undefined && tempItem.amount > 1) {
                 tempItem.amount = tempItem.amount - 1;
                 event.target.nextElementSibling.innerText = tempItem.amount;
+                
             } else {
                 cart = filterItem(cart, event.target);
                 event.target.closest('.cart-item').remove();
             }
+            
+            setCartTotal(cart);
         }
     });
 }
-
-
 
 document.addEventListener("DOMContentLoaded", function(){
     document.body.style.setProperty( "--categories-length", categories.length );
@@ -188,18 +242,8 @@ document.addEventListener("DOMContentLoaded", function(){
     addToCarts.forEach(function(item) {
         item.addEventListener("click", function(event) {
             let product = getProduct(event.target.closest('.product').dataset.id);
-            let exist = cart.some(elem => elem.id===product.id);
-            if(exist){
-                cart.forEach(elem => {
-                    if(elem.id===product.id){
-                        elem.amount +=1;
-                        }
-                })
-            }else{
-            let cartItem = {...product, amount:1};
-            cart = [...cart, cartItem];
-            //console.log(cart);
-            }
+
+            addItem(product);
         });
     });
 
