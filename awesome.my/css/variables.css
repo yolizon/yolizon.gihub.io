@@ -7,7 +7,8 @@
     --root-font-size: 16px;
     --grey-5: #555;
     
-
+    --text-base-size: 1em;
+    --text-line-height:1.5;
 
     --font-size-default: calc(var(--root-font-size)/16*1rem);
     --transition: all 0.3s linear;
