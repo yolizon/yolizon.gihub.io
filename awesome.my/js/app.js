@@ -166,24 +166,7 @@ function populateCart(cart) {
     cartItems.innerHTML = '';
     cart.forEach(function(item){addToCartItem(item);});
 }
-const freeShipping = data =>
- `
-    <div class="col col-md-4">
-        <header class="text-center">
-            <i class="far fa-heart"></i>
-            <h2>${data.name}</h2>
-            <p>${data.description}</p>
-        </header>
-    </div>
-`;
 
-function makeShipping(blocks) {
-    let result = '';
-    blocks.forEach(item => {
-        result+=freeShipping(item);
-    });
-    document.querySelector('.free-shipping').innerHTML = result;
-}
 const clear = () => {
     cart = [];
     cartItems.innerHTML = '';
@@ -306,12 +289,18 @@ function compareValues(key, order = 'asc') {
       );
     };
 }
+function fetchData(dataBase){
+    const  baseUrl =`https://github.com/yolizon/db/${dataBase}`;
+    fetch(baseUrl)
+    .then(response =>response.json().then(products=>saveProducts(products))).catch(err=>console.error(err));
+}
 
 document.addEventListener("DOMContentLoaded", function(){
     
     closeBtn.addEventListener("click", closeCart);
     sidebarToggle.addEventListener("click", toggleCart);
-    saveProducts(products);
+    // saveProducts(products);
+    fetchData('products');
 
     const categories = [...new Set(getProducts().map(item=> (
         {
@@ -331,12 +320,11 @@ document.addEventListener("DOMContentLoaded", function(){
     renderCategories(".carousel-track .carousel-item");
     document.querySelector('.categories-list') && categoriesList(categories);
     document.querySelector('.categories-list') && renderCategories(".categories-list");
-    document.querySelector('.row .free-shipping') && makeShipping(blocks);
     
     if (document.querySelector(".selectpicker")){
         let selectpicker = document.querySelector(".selectpicker");
         selectpicker.addEventListener('change', function() {
-            // обычная функция изменяет свой контекст в зависимости от вызова
+
             console.log('You selected: ', this.value);
             switch(this.value){
                 case 'low-high':
